@@ -4,12 +4,10 @@ const getDataItalian = async () => {
     const response = await fetch('https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=Italian%20Serie%20A')
     const data = await response.json()
     const leagueItalian = data.teams
-    // console.log(data)
-    // console.log(leagueItalian)
 
     container.innerHTML = ""
     leagueItalian.forEach(element => {
-        //console.log(element.strTeam)
+        
         container.innerHTML +=
             `
         <section class="bg-gray-900 text-white hover:bg-white duration-700 hover:text-gray-900">
@@ -28,20 +26,20 @@ const getDataItalian = async () => {
         <div class="">
             <div class="text-center">
                 <h4 class="mb-2 text-2xl font-bold ">
-                    <a href="#">${element.strStadium}</a>
+                    ${element.strStadium}
                 </h4>
                 <img class="mx-auto mb-4 w-52 h-36 rounded-xl" src="${element.strStadiumThumb}" alt="Bonnie Avatar">
                 <h5 class="mb-1 text-xl font-bold">
-                    <a href="#">${element.strLeague2}</a>
+                    ${element.strLeague2}
                 </h5>
                 <h5 class="mb-1 text-xl font-bold">
-                    <a href="#">${element.strLeague3}</a>
+                    ${element.strLeague3}
                 </h5>
                 <h5 class="mb-1 text-xl font-bold">
-                    <a href="#">${element.strLeague4}</a>
+                    ${element.strLeague4}
                 </h5>
                 <h5 class="mb-1 text-xl font-bold">
-                    <a href="#">${element.strLeague5}</a>
+                    ${element.strLeague5}
                 </h5>
             </div>
         </div>
